@@ -11,8 +11,7 @@ public class Encriptar {
     public static String getHash(String texto) {
         try {
             MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
-            String passWithSalt = texto;
-            byte[] passBytes = passWithSalt.getBytes();
+            byte[] passBytes = texto.getBytes();
             byte[] passHash = sha256.digest(passBytes);
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < passHash.length; i++) {
